@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75927f85fc43044aac7e90574d02881, type: 3}
+  m_Name: House
+  m_EditorClassIdentifier: 
+  isGround: 0
+  prefabName: House
+  objectToIntantiate: {fileID: 5062671085959522876, guid: 5f03920360e3ed84aab4358a82d97ae9, type: 3}
+  spriteOfObject: {fileID: 0}
+  coinOverTime: 0
+  coinCount: 0
+  destroyTerrain: 0
+  overTerrain: 0
