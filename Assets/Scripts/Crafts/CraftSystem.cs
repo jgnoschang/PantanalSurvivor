@@ -59,7 +59,7 @@ public class CraftSystem : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            slots[i].OnRemoveButton();
+            slots[i].ClearSlot();
             craftItems.RemoveAt(i);
         }
     }
@@ -81,7 +81,7 @@ public class CraftSystem : MonoBehaviour
 
                         return;
                     }
-                    if(craftItems[j].name== names[j]&& craftItems[j].itemAmount==amount|| craftItems.Count > 1)
+                    if(craftItems[j].name== names[j]&& craftItems[j].itemAmount>=amount)
                     {
                        
                         result = true;
@@ -98,7 +98,12 @@ public class CraftSystem : MonoBehaviour
                         updatedInv?.Invoke();
                         resutSlot.AddItem(allItemsCanMake[i].newItem);
                         resutSlot.cantUse = true;
-                        slots[i].ClearSlot();
+                       for (int e = 0; e < slots.Length; e++)
+                        {
+                            slots[e].ClearSlot();
+                        }
+                      
+                      
                         break;
                     }
                     else
