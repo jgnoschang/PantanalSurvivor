@@ -10,9 +10,16 @@ public class InventorySlot : MonoBehaviour {
 	public Text itemAmount;
 
 	Item item;  // Current item in the slot
+	InventoryUI inv;
+	public bool cantUse = false;
 
-	// Add item to the slot
-	public void AddItem (Item newItem)
+    private void Start()
+    {
+		inv = FindObjectOfType<InventoryUI>();
+    }
+
+    // Add item to the slot
+    public void AddItem (Item newItem)
 	{
 		item = newItem;
 		if (item.isStackable) {
@@ -28,7 +35,7 @@ public class InventorySlot : MonoBehaviour {
 	public void ClearSlot ()
 	{
 		item = null;
-
+		itemAmount.text = null;
 		icon.sprite = null;
 		icon.enabled = false;
 		removeButton.interactable = false;
@@ -45,8 +52,19 @@ public class InventorySlot : MonoBehaviour {
 	{
 		if (item != null)
 		{
-			item.Use();
+			OnClickEvent();
+			//item.Use();
 		}
 	}
+	public void OnClickEvent()
+    {
+        if (cantUse)
+        {
+			var craft = FindObjectOfType<CraftSystem>();
+			craft.GetItem(item);
+			OnRemoveButton();
+			inv.UpdateUI();
+        }
+    }
 
 }

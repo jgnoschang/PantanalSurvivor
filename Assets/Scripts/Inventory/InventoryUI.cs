@@ -10,7 +10,9 @@ public class InventoryUI : MonoBehaviour {
 
 	Inventory inventory;	// Our current inventory
 
-	InventorySlot[] slots;	// List of all the slots
+	InventorySlot[] slots;  // List of all the slots
+	
+	public bool cantUse = false;
 
 	void Start () {
 		inventory = Inventory.instance;
@@ -22,6 +24,20 @@ public class InventoryUI : MonoBehaviour {
 		slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 	}
 
+	public void InativeActItems()
+    {
+		foreach(var s in slots)
+        {
+			s.cantUse = true;
+        }
+    }
+	public void AtiveActItems()
+	{
+		foreach (var s in slots)
+		{
+			s.cantUse = false;
+		}
+	}
 	public void OpenInventoryUi(InputAction.CallbackContext context) {
 		if (inventoryUI.activeSelf)
 		{
@@ -41,7 +57,7 @@ public class InventoryUI : MonoBehaviour {
 	//		- Adding items
 	//		- Clearing empty slots
 	// This is called using a delegate on the Inventory.
-	void UpdateUI ()
+	public void UpdateUI ()
 	{
 		// Loop through all the slots
 		for (int i = 0; i < slots.Length; i++)
@@ -56,4 +72,6 @@ public class InventoryUI : MonoBehaviour {
 			}
 		}
 	}
+
+	
 }
