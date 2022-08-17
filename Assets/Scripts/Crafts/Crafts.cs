@@ -8,5 +8,4 @@ public class Crafts : ScriptableObject
     public string[] itemNames;
     public Item newItem;
     public int itemAmount;
-    public int qtdRec;
 }

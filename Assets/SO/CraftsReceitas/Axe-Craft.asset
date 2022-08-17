@@ -15,7 +15,5 @@ MonoBehaviour:
   itemNames:
   - Stone
   - Branch
-  - Branch
   newItem: {fileID: 11400000, guid: fffb5e5280b82be48893957088d75ff7, type: 2}
   itemAmount: 0
-  qtdRec: 0

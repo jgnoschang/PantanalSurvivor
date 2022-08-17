@@ -61,35 +61,33 @@ public class CraftSystem : MonoBehaviour
 
     public void MakeNewItem()
     {
-        if (craftItems.Count >0)
+        if (craftItems.Count >1)
         {
         
             bool result = false;
             for (int i = 0; i < allItemsCanMake.Count; i++)
             {
-                string[] names = allItemsCanMake[i].itemNames;
-                int amount = allItemsCanMake[i].qtdRec;
-                for (int j = 0; j < names.Length; j++)
+                string[] namesReceita = allItemsCanMake[i].itemNames;
+                print("AAAAAAAAA");
+                for (int j = 0; j < namesReceita.Length; j++)
                 {
-                    if (j > craftItems.Count)
+                    if (j> craftItems.Count)
                     {
-
                         return;
                     }
-                    if(craftItems[j].name== names[j])
+                    if (craftItems[j].name == namesReceita[j])
                     {
-                       if(craftItems[j].itemAmount >= amount)
-                        {
-                            result = true;
-                        }
-                        else
-                        {
-                            print("Quantidade Insuficeiente");
-                            result = false;
-                            break;
-                        }
 
+                        result = true;
                     }
+                    else
+                    {
+                        result = false;
+
+                        break;
+                    }
+                    print("aaa");
+                }
                     if (result == true)
                     {
                         myInventory.Add(allItemsCanMake[i].newItem);
@@ -102,18 +100,9 @@ public class CraftSystem : MonoBehaviour
                         }
                         craftItems.Clear();
                         updatedInv?.Invoke();
-
-
                         break;
                     }
-                    else
-                    {
-                        print("A Receita está errada");
-                        break;
-                    }
-
-                }
-                
+                   
             }
         }
         else

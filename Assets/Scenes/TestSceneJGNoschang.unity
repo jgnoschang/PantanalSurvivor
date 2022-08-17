@@ -673,7 +673,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25302
+  m_Name: pb_Mesh25454
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2931,8 +2931,8 @@ MonoBehaviour:
   - {fileID: 1061702932}
   resutSlot: {fileID: 1759992881}
   allItemsCanMake:
-  - {fileID: 11400000, guid: 4868b8dccb89aea4e8deec568f8bdf5d, type: 2}
   - {fileID: 11400000, guid: ec4a349ecb98d6f40964ddd7bb2796b7, type: 2}
+  - {fileID: 11400000, guid: 4868b8dccb89aea4e8deec568f8bdf5d, type: 2}
   myInventory: {fileID: 1834084326}
 --- !u!1001 &1262568838
 PrefabInstance:

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemNames:
   - Branch
+  - Branch
   newItem: {fileID: 11400000, guid: 26592229b962de148b8db4808782df74, type: 2}
   itemAmount: 0
-  qtdRec: 3
