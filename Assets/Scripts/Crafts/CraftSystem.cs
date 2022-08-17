@@ -24,7 +24,7 @@ public class CraftSystem : MonoBehaviour
 
     public void ExitCraft()
     {
-        ativedItems?.Invoke(); // Reativa o uso dos itens por click
+        ativedItems?.Invoke();
 
         if (craftItems.Count <= 0)
         {
@@ -36,6 +36,7 @@ public class CraftSystem : MonoBehaviour
             slots[i].ClearSlot();
         }
         craftItems.Clear();
+       
         updatedInv?.Invoke();
      
 
@@ -55,14 +56,8 @@ public class CraftSystem : MonoBehaviour
             slots[j].AddItem(craftItems[j]);
         }
     }
-    public void RemoveItems()
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            slots[i].ClearSlot();
-            craftItems.RemoveAt(i);
-        }
-    }
+
+   
 
     public void MakeNewItem()
     {
@@ -81,16 +76,19 @@ public class CraftSystem : MonoBehaviour
 
                         return;
                     }
-                    if(craftItems[j].name== names[j]&& craftItems[j].itemAmount>=amount)
+                    if(craftItems[j].name== names[j])
                     {
-                       
-                        result = true;
-                    }
-                    else
-                    {
-                        print("Quantidade Insuficeiente");
-                        result = false;
-                        break;
+                       if(craftItems[j].itemAmount >= amount)
+                        {
+                            result = true;
+                        }
+                        else
+                        {
+                            print("Quantidade Insuficeiente");
+                            result = false;
+                            break;
+                        }
+
                     }
                     if (result == true)
                     {
@@ -102,13 +100,16 @@ public class CraftSystem : MonoBehaviour
                         {
                             slots[e].ClearSlot();
                         }
-                      
-                      
+                        craftItems.Clear();
+                        updatedInv?.Invoke();
+
+
                         break;
                     }
                     else
                     {
                         print("A Receita está errada");
+                        break;
                     }
 
                 }
