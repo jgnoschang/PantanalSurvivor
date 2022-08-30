@@ -3,22 +3,7 @@ guid: 948a1e927c821c84784ef0e71405e040
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: paredes-oca-central-2-mat
-    second: {fileID: 2100000, guid: 9ec78064eceaa2d4ab5c18e04520546b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: suporte-bamboo-mat
-    second: {fileID: 2100000, guid: 3c2aa2da896568b40915e18663e973dc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: telhado-oca-central-mat
-    second: {fileID: 2100000, guid: 70fb8a428ed64e1499661648ef0ddff5, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

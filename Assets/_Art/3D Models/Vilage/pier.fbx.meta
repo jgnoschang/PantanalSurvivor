@@ -3,7 +3,12 @@ guid: 6fcdbcc732bc01d4cb13517a0a539e59
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: suporte-bamboo-mat
+    second: {fileID: 2100000, guid: 70ccc539a4e627747ae6e0fcb36eb96a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
